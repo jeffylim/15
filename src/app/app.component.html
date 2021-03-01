@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+  <div class="card" style="width: 14rem; height: 14rem; margin-top: 10px;" *ngFor="let item of dets">
+    <div class="card-body" [ngClass]="{'bgc--green':item.status===true, 'bgc--red':item.status===false}">
+      <h5 class="card-title">{{item.id}}</h5>
+      <p class="card-text">{{item.name}}</p>
+      <button [ngClass]="item.status?{'btn btn-danger':true}:{'btn btn-success':true}" (click)="onDelete(item)">Delete</button>
+    </div>
+  </div>
+  </div>
+  <div class="form-group"  style="margin-top: 100px;">
+    <input id="name" type="text" class="form-control col-2" style="margin: 0 auto; height: 30px;" placeholder="Имя датчика" #name>
+  </div>
+  <div class="buttons">
+  <button class="btn btn-success" style="margin-right: 20px; padding: 10px;" (click)="onAdd(name.value)">Add</button>
+  <button class="btn btn-danger" (click)="onDeleteAll()" [disabled]="dets.length == 0">Delete all</button>
+  </div>
+  </div>

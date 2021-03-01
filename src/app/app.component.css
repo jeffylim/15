@@ -1,0 +1,10 @@
+.bgc--green {
+  background-color: rgb(58, 222, 99);
+}
+.bgc--red {
+  background-color: rgb(255, 79, 79);
+}
+.buttons{
+  display: flex;
+  justify-content: center;
+}
